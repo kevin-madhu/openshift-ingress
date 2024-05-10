@@ -1,0 +1,31 @@
+# Ignore compiled Python files
+*.pyc
+ 
+# Ignore Ansible log files
+ansible.log
+ 
+# Ignore temporary files
+*.retry
+ 
+# Ignore system files
+.DS_Store
+Thumbs.db
+ 
+# Ignore virtual environments
+venv/
+env/
+ 
+# Ignore role dependencies (if using ansible-galaxy to manage roles)
+roles/*/molecule/
+roles/*/node_modules/
+roles/*/tests/
+roles/*/vars/
+roles/*/files/
+roles/*/tmp/
+roles/*/spec/
+ 
+# Ignore secrets or sensitive information
+vars/secrets.yml
+ 
+# Ignore any local environment configurations
+inventory/*
