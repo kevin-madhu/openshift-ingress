@@ -12,6 +12,7 @@
     state: present
 
 - name: Copy HAProxy configuration template
+  become: true
   template:
     src: "{{ role_path }}/files/haproxy.cfg"
     dest: /etc/haproxy/haproxy.cfg
