@@ -11,14 +11,14 @@
     name: haproxy
     state: present
 
-- name: Copy haproxy configuration files
-  become: true
-  ansible.builtin.copy:
+- name: Copy HAProxy configuration template
+  template:
     src: "{{ role_path }}/files/haproxy.cfg"
     dest: /etc/haproxy/haproxy.cfg
+    mode: 0644
 
 - name: Ensure haproxy service is running and enabled
   service:
     name: haproxy
-    state: started
+    state: restarted
     enabled: yes

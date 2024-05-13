@@ -20,7 +20,6 @@ roles/*/molecule/
 roles/*/node_modules/
 roles/*/tests/
 roles/*/vars/
-roles/*/files/
 roles/*/tmp/
 roles/*/spec/
  
@@ -29,3 +28,7 @@ vars/secrets.yml
  
 # Ignore any local environment configurations
 inventory/*
+
+#Include specific static files in roles/*/files directory
+roles/*/files/*
+!roles/haproxy_config/files/haproxy.cfg.j2
